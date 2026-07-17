@@ -1,33 +1,343 @@
-# BiVerify-ComplianceSystem
-web-based compliance verification app that enables organizations to track and verify service delivery using QR codes. The system ensures transparency, reduces fraud, and automates compliance monitoring without requiring any mobile application.
+# BiVerify - QR-Based Compliance Verification System
 
-## Connecting to MongoDB Atlas (development)
+![BiVerify Banner](https://via.placeholder.com/1200x400?text=BiVerify+Compliance+Verification+System)
 
-Recommended workflow for a team:
+## Overview
 
-- Keep secrets out of git. Create `server_python/.env` locally and add it to `.gitignore` (already ignored).
-- Commit `server_python/.env.example` with the variable names (no secrets).
-- Use MongoDB Compass or the MongoDB VS Code extension for browsing/inspecting data. The app itself should use the Atlas connection string via an environment variable.
+**BiVerify** is a multi-tenant B2B compliance verification platform designed to simplify and secure the process of verifying service providers, managing compliance documents, and maintaining transparent business relationships.
 
-Quick steps:
+The system enables organizations (**Clients**) to connect with verified service providers (**Providers**), request services, manage compliance records, and perform instant verification through QR-based authentication.
 
-1. In Atlas: create a database user and copy the connection string (SRV form, `mongodb+srv://...`).
-2. On your machine, copy `server_python/.env.example` to `server_python/.env` and fill `MONGODB_URI` with the Atlas URI.
-3. Activate the venv and install driver if needed:
+BiVerify provides a centralized platform for compliance management with role-based access control, audit tracking, document management, and secure verification workflows.
 
-```powershell
+---
+
+## Problem Statement
+
+Organizations often struggle with:
+
+* Manual compliance verification processes
+* Difficulty managing service provider credentials
+* Lack of transparency in business verification
+* Inefficient document tracking
+* Limited audit visibility
+
+BiVerify addresses these challenges by providing a digital compliance ecosystem with automated verification and secure record management.
+
+---
+
+# Key Features
+
+## Multi-Tenant Architecture
+
+* Separate workspaces for Clients and Providers
+* Organization-based data isolation
+* Secure role-based workflows
+
+---
+
+## QR-Based Compliance Verification
+
+* Generate unique QR codes for verification
+* Instantly verify provider compliance status
+* Reduce manual verification efforts
+
+---
+
+## Role-Based Access Control (RBAC)
+
+Supported user roles:
+
+* Admin
+* Client Organization
+* Client Staff
+* Service Provider
+* Provider Staff
+* Compliance Officer
+
+Each role has controlled access according to responsibilities.
+
+---
+
+## Compliance Document Management
+
+* Upload and manage compliance documents
+* Track verification status
+* Maintain compliance records
+* Secure document handling
+
+---
+
+## Service Management Workflow
+
+* Service request creation
+* Provider approval process
+* Service booking management
+* Request tracking
+
+---
+
+## Audit Logging
+
+* Track important system activities
+* Maintain transparency
+* Monitor user actions
+
+---
+
+# System Architecture
+
+```
+                    Users
+                      |
+                      |
+              React Frontend
+                      |
+                      |
+              REST API Layer
+                      |
+          -----------------------
+          |                     |
+     Flask Backend          Authentication
+          |
+          |
+       MongoDB Database
+```
+
+---
+
+# Technology Stack
+
+## Frontend
+
+* React.js
+* Vite
+* JavaScript (ES6+)
+* CSS3
+* React Router
+* Axios
+
+## Backend
+
+* Python
+* Flask
+* REST APIs
+* JWT Authentication
+
+## Database
+
+* MongoDB Atlas
+
+## Security
+
+* JWT Authentication
+* Password Hashing
+* Role-Based Access Control
+* Protected Routes
+
+## Development Tools
+
+* Git & GitHub
+* VS Code
+* Postman
+* MongoDB Compass
+
+---
+
+# Project Structure
+
+```
+BiVerify-ComplianceSystem/
+
+│
+├── client/                 # React Frontend
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── api/
+│
+├── server_python/          # Flask Backend
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   ├── app.py
+│   └── config.py
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+# Installation & Setup
+
+## Prerequisites
+
+Make sure you have installed:
+
+* Node.js
+* Python 3.x
+* MongoDB
+
+---
+
+# Frontend Setup
+
+Navigate to client folder:
+
+```bash
+cd client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start React application:
+
+```bash
+npm run dev
+```
+
+Frontend will run on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# Backend Setup
+
+Navigate to backend folder:
+
+```bash
 cd server_python
-.\.venv\Scripts\Activate.ps1
-python -m pip install "pymongo[srv]"
 ```
 
-4. Test connection (example provided in `server_python/db_test.py`):
+Create virtual environment:
 
-```powershell
-python db_test.py
+```bash
+python -m venv venv
 ```
 
-Security notes:
+Activate environment:
 
-- Use a least-privilege DB user for the app.
-- Restrict Atlas IP access for production, use cloud or CI secrets for deployments.
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run Flask server:
+
+```bash
+python app.py
+```
+
+Backend will run on:
+
+```
+http://localhost:5000
+```
+
+---
+
+# Environment Variables
+
+Create `.env` file inside `server_python`:
+
+```
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
+EMAIL_USER=your_email
+
+EMAIL_PASSWORD=your_password
+```
+
+---
+
+# API Modules
+
+## Authentication APIs
+
+* User Registration
+* Login
+* JWT Authentication
+* Password Recovery
+
+## Client APIs
+
+* Dashboard
+* Service Requests
+* Compliance Vault
+* Team Management
+
+## Provider APIs
+
+* Provider Dashboard
+* Document Management
+* Incoming Requests
+
+## Verification APIs
+
+* QR Verification
+* Compliance Status Checking
+
+---
+
+# Screenshots
+
+Add application screenshots here:
+
+```
+docs/
+ └── screenshots/
+       ├── landing-page.png
+       ├── login.png
+       ├── dashboard.png
+       └── qr-verification.png
+```
+
+---
+
+# Future Enhancements
+
+* Mobile application support
+* AI-based document verification
+* Advanced analytics dashboard
+* Cloud deployment
+* Automated compliance reminders
+
+---
+
+# Team
+
+Developed as a Final Year Project (FYP)
+
+**Project Name:** BiVerify
+**Category:** Full Stack Web Application
+**Architecture:** Multi-Tenant B2B Platform
+
+---
+
+# Contributors
+
+* Beenish Ishaq
+* Team Members
+
+---
+
+# License
+
+This project is developed for educational and demonstration purposes.
