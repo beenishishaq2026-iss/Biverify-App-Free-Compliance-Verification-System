@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import ast; [ast.parse\\(open\\(f\\).read\\(\\), f\\) for f in ['app.py','config.py','db.py','auth.py','qr.py','audit.py','services/compliance.py','services/verification.py','routes/auth_routes.py','routes/location_routes.py','routes/booking_routes.py','routes/scan_routes.py','setup_db.py']]; print\\('python ok'\\)\")",
+      "Bash(npx --no-install eslint src/pages/Authentication/LoginPage.jsx src/pages/ScanVerify/ScanVerifyPage.jsx src/pages/ScanVerify/CurrentJobs.jsx src/pages/ClientStaff/VerifyProvider.jsx src/api/client.js)",
+      "Bash(xxd /Users/iznasalman/Documents/GitHub/BiVerify-ComplianceSystem/server_python/requirements.txt)"
+    ]
+  }
+}

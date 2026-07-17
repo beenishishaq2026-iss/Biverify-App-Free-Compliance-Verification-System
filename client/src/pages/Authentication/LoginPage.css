@@ -1,0 +1,258 @@
+/* Color Palette from your guidelines */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --header-bg: #2b9d4e;
+  --primary-green: #2b9d4e;
+  --primary-dark: #1f7a3b;
+  --primary-light: #4fb96e;
+  --primary-soft: #8fd6a3;
+  --page-bg: #F5F6FA;
+  --card-bg: #FFFFFF;
+  --dark-text: #1A1D23;
+  --muted-text: #6B7280;
+  --white-text: #FFFFFF;
+  --warning-orange: #F59E0B;
+  --danger-red: #EF4444;
+  --border-light: rgba(43, 157, 78, 0.1);
+  --border-medium: rgba(43, 157, 78, 0.15);
+  --border-dark: rgba(43, 157, 78, 0.2);
+  --primary-bg-light: rgba(43, 157, 78, 0.05);
+  --primary-bg-medium: rgba(43, 157, 78, 0.08);
+  --primary-bg-icon: rgba(43, 157, 78, 0.1);
+  --warning-bg: rgba(245, 158, 11, 0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0fdf4;
+  /* Fallback for the background */
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* This matches the signup-wrapper your team lead provided */
+.login-wrapper {
+  background: #f0fdf4;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  /* Increased padding to give more gap from screen edges */
+  box-sizing: border-box;
+}
+
+/* Base Container styles */
+.auth-container {
+  display: flex;
+  width: 90%;
+  /* Use percentage so it doesn't stick to sides on smaller screens */
+  max-width: 1000px;
+  /* Slightly narrower */
+  height: 580px;
+  /* Slightly shorter */
+  background-color: var(--page-bg);
+  border-radius: 24px;
+  /* More rounded for a premium feel */
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  /* Stronger shadow to make it feel floating */
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+  width: 380px;
+  background-color: var(--primary-green);
+  color: var(--white-text);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--card-bg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--primary-soft);
+}
+
+/* RIGHT MAIN AREA */
+.main-content {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--page-bg);
+}
+
+.right-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  background-color: transparent;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: var(--muted-text);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--dark-text);
+  background-color: var(--card-bg);
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #A0AABF;
+}
+
+.form-input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px var(--primary-bg-light);
+}
+
+.btn-primary {
+  height: 48px;
+  padding: 0 32px;
+  background-color: var(--primary-green);
+  color: var(--white-text);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  height: 48px;
+  padding: 0 16px;
+  background-color: var(--card-bg);
+  color: var(--dark-text);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+  .login-wrapper {
+    padding: 0;
+  }
+
+  .auth-container {
+    flex-direction: column;
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-radius: 0;
+    padding: 30px;
+    min-height: auto;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .logo-container {
+    margin-bottom: 30px;
+  }
+
+  .main-content {
+    padding: 30px 20px;
+  }
+}

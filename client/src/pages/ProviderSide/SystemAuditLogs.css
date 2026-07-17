@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6fa; 
+}
+
+.logs-container {
+  padding: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logs-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #374151; 
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.logs-table-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Subtle drop shadow */
+}
+
+.logs-table-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: #2b9d4e; /* Green header background */
+  border-bottom: 1px solid #1f7a3b;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.logs-table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.logs-table-row {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+.logs-table-row:last-child {
+  border-bottom: none;
+}
+
+/* Columns Alignment */
+.col-time {
+  flex: 1.5;
+}
+
+.col-user {
+  flex: 1;
+}
+
+.col-action {
+  flex: 1.5;
+}
+
+.col-details {
+  flex: 3;
+}
+
+/* Body specific colors */
+.logs-table-body .col-time {
+  color: #4b5563;
+}
+
+.logs-table-body .col-user {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.logs-table-body .col-details {
+  color: #4b5563;
+}
+
+/* Badges */
+.action-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Specific Action Colors */
+.action-badge.create_client {
+  background-color: #dbeafe; /* Light blue bg */
+  color: #1e40af; /* Dark blue text */
+}
+
+@media (max-width: 768px) {
+  .logs-table-header {
+    display: none; 
+  }
+  .logs-table-wrapper {
+    overflow-x: auto;
+  }
+  .logs-table-row {
+    min-width: 800px; /* Force scroll on small screens */
+  }
+  .logs-table-header {
+    display: flex;
+    min-width: 800px;
+  }
+}
